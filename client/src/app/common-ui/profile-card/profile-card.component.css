@@ -43,6 +43,7 @@
     align-items: start;
     padding: 0px 24px;
     gap: 20px;
+    width: 400px;
 }
 .profile-card__last_name {
     font-family:  "Montserrat-Light", 'Courier New', Courier, monospace;

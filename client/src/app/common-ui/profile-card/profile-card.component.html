@@ -1,15 +1,19 @@
-<div class="profile-card">
-    <div class="avatar-name">
-        <img src="https://reqres.in/img/faces/7-image.jpg" alt="avatar" class="profile-card__avatar">
-        <div class="profile-card__name">
-            <strong class="profile-card__first_name">Ким Кицураги</strong>
-            <span class="profile-card__last_name">Детектив</span>
+@if (profile) {
+    <div class="profile-card">
+        <div class="avatar-name">
+            <img [src]="profile.avatar" alt="avatar" class="profile-card__avatar">
+            <div class="profile-card__name">
+                <strong class="profile-card__first_name">{{profile.first_name}}</strong>
+                <span class="profile-card__last_name">{{profile.last_name}}</span>
+            </div>
         </div>
+        <div class="profile-card__email">
+            Электронная почта: {{profile.email}}
+        </div>
+        <button class="profile-card__button_delete">
+            Удалить пользователя
+        </button>
     </div>
-    <div class="profile-card__email">
-        Электронная почта: 
-    </div>
-    <button class="profile-card__button_delete">
-        Удалить пользователя
-    </button>
-</div>
+} @else {
+    null
+}

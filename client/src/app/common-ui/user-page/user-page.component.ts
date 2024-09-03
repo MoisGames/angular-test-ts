@@ -5,7 +5,7 @@ import { ProfileService } from '../../data/services/profile.service';
 @Component({
   selector: 'app-user-page',
   standalone: true,
-  imports: [ProfileCardComponent],
+  imports: [ProfileCardComponent,],
 
   templateUrl: './user-page.component.html',
   styleUrl: './user-page.component.css'
