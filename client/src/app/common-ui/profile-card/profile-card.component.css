@@ -1,6 +1,7 @@
 :root {
     --dark-color: rgb(0,0,0);
-    --light-color: rgb(255,255,255)
+    --light-color: rgb(255,255,255);
+    --purple-color: rgb(128, 0, 255);
 }
 .profile-card {
     border: 1px solid var(--light-color);
@@ -12,8 +13,8 @@
 
 .avatar-name {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     flex-direction: row;
     gap: 20px;
 }
@@ -30,4 +31,30 @@
     flex-direction: column;
     gap: 20px;
     width: 200px;
+    height: 200px;
+}
+
+.profile-card__first_name, .profile-card__email {
+    font-family:  "Montserrat-Black", 'Courier New', Courier, monospace;
+}
+.profile-card__email {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 0px 24px;
+    gap: 20px;
+}
+.profile-card__last_name {
+    font-family:  "Montserrat-Light", 'Courier New', Courier, monospace;
+}
+.profile-card__button_delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgb(128, 0, 255);
+    gap: 20px;
+    font-family:  "Montserrat-Black", 'Courier New', Courier, monospace;
 }
