@@ -1,1 +1,7 @@
-<app-profile-card></app-profile-card>
+<div class="user-page__container">
+    @for (profile of profiles.data; track profile.id) {
+        <app-profile-card></app-profile-card>
+    }
+    
+</div>
+
