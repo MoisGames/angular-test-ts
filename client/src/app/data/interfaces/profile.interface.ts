@@ -9,10 +9,10 @@
     
 // }
 export interface Profile {
-    page: number,
-    per_page: number,
-    total: number,
-    total_pages: number,
+    // page: number,
+    // per_page: number,
+    // total: number,
+    // total_pages: number,
     // data: string | number[]
     // id: number,
     // email: string,
@@ -23,6 +23,9 @@ export interface Profile {
     // data: any [] = [
     //     id: number,
     // ] 
-
-    [data: number | string] : any
+    id: number,
+    email: string,
+    first_name: string,
+    last_name: string,
+    avatar: string | null,
 }

@@ -7,8 +7,10 @@
     border: 1px solid var(--light-color);
     color: var(var(--light-color));
     padding: 32px 24px;
+    margin: 10px;
     display: flex;
     flex: 5 5 0%;
+    gap: 20px;
 }
 
 .avatar-name {

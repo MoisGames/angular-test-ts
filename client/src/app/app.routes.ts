@@ -5,5 +5,6 @@ import { UserCardPageComponent } from './pages/user-card-page/user-card-page.com
 export const routes: Routes = [
     {path: 'userlist', component: UserPageComponent },
     {path: '', component: UserPageComponent  },
-    {path: 'users/:id', component: UserCardPageComponent}
+    {path: 'users/:id', component: UserCardPageComponent},
+    { path: "**", redirectTo: "/"},
 ];
