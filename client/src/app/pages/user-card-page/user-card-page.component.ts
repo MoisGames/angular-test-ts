@@ -18,16 +18,20 @@ import { Profile } from '../../data/interfaces/profile.interface';
 export class UserCardPageComponent {
   profileService = inject(ProfileService)
 
-  profile: any = []
-
+  profiles: any = [] // Мы получаем объект с полем data
+ 
   constructor () {
     this.profileService.getAccount()
       .subscribe(val => {
-        console.log(val);
+        // console.log(val);
         
-        return this.profile = val // получили ответ от сервера и записали в profile
+        return this.profiles = val // получили ответ от сервера и записали в profiles
       })
+      
+      console.log(this.profiles);
   }
+  
+
   // route = inject(ActivatedRoute)
 
   // me$ = toObservable(this.profileService.me)

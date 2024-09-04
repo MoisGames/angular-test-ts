@@ -1,11 +1,14 @@
-@if (profile; as profile.data) {
+@if (profiles) {
     <div class="user-card-page__container">
-            <h1 class="user-card-page__header">Страница пользователя</h1>
-            <app-profile-header
-                [profile]="profile"
-            ></app-profile-header>
+        <h1 class="user-card-page__header">Страница пользователя</h1>
+        <app-profile-header
+            [profile]="profiles"
+        ></app-profile-header>
     </div>
 } @else {
-    null
+    null 1
 }
-     
+
+<!-- @for (profile of profiles.data; track profile.id  ) {
+    
+} -->

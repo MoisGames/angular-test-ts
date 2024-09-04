@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { ProfileCardComponent } from "../../common-ui/profile-card/profile-card.component";
 import { ProfileService } from '../../data/services/profile.service';
-import { JsonPipe } from '@angular/common';
-import { Profile } from '../../data/interfaces/profile.interface';
+import { ListResourcesComponent } from '../../common-ui/list-resources/list-resources/list-resources.component';
+
 
 @Component({
   selector: 'app-user-page',
   standalone: true,
-  imports: [ProfileCardComponent, JsonPipe],
+  imports: [ProfileCardComponent, ListResourcesComponent],
   templateUrl: './user-page.component.html',
   styleUrl: './user-page.component.css'
 })

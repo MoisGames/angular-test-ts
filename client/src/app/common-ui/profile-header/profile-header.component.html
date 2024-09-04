@@ -1,11 +1,12 @@
-@if (profile; as profile) {
+@if (profile) {
     <main class="profile-header__container">
         <div class="profile-header__avatar_container">
-            <img [src]="profile.avatar" alt="avatar" class="profile-header__avatar">
-            <div class="profile-header__name">{{profile.first_name}} 222222222 {{profile.last_name}}</div>
+            <img [src]="profile.data.avatar" alt="avatar" class="profile-header__avatar">
+            <div class="profile-header__name">{{profile.data.first_name}} {{profile.data.last_name}}</div>
         </div>
-        <div class="profile-header__email">Электронная почта: {{profile.email}}</div>
+        <div class="profile-header__email">Электронная почта: {{profile.data.email}}</div>
+        
     </main>
 } @else {
-    null
+    null 2
 }

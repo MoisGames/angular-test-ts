@@ -2,6 +2,5 @@
 @for (profile of profiles.data; track profile.id  ) {
     <app-profile-card [profile]="profile" ></app-profile-card>
 }
-<pre>
-    {{profiles.data | json}}
-</pre>
+<h1 class="user-page__header">Список ресурсов</h1>
+<app-list-resources></app-list-resources>
