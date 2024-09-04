@@ -8,5 +8,5 @@ import { Component, Input, } from '@angular/core';
   styleUrl: './profile-card.component.css'
 })
 export class ProfileCardComponent {
-    @Input() profile?: any
+    @Input() profile!: any
 }

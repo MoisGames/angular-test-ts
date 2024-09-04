@@ -1,0 +1,4 @@
+<h1 class="user-card-page__header">Страница пользователя</h1>
+@for (profile of profiles.data; track profile.id) {
+    <app-profile-header [profile] = "profile"></app-profile-header>
+}

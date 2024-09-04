@@ -1,6 +1,5 @@
-.user-page__header {
+.user-card-page__header {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
