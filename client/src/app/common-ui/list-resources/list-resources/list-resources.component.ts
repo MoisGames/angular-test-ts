@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { ProfileService } from '../../../data/services/profile.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-list-resources',
@@ -8,5 +10,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './list-resources.component.css'
 })
 export class ListResourcesComponent {
+  profilesService = inject(HttpClient)
   @Input() resource!: any
+  
 }

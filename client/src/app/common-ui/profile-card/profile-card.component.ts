@@ -1,4 +1,6 @@
-import { Component, Input, } from '@angular/core';
+import { Component, inject, Input, } from '@angular/core';
+import { ProfileService } from '../../data/services/profile.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile-card',
@@ -9,4 +11,9 @@ import { Component, Input, } from '@angular/core';
 })
 export class ProfileCardComponent {
     @Input() profile!: any
+    profileServices = inject(HttpClient)
+
+    deleteAccount(profile:any) {
+      this.profileServices.deleteAccount(profile).subscribe();
+    }
 }

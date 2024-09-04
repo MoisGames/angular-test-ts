@@ -9,6 +9,10 @@ export class ProfileService {
   http = inject(HttpClient)
   baseApiUrl = 'https://reqres.in/api/'
   me!: any
+  id!: number
+  status!: string
+
+
   getMe() {
     return this.http.get(`${this.baseApiUrl}users/me`)
       .pipe(
@@ -23,5 +27,10 @@ export class ProfileService {
 
   getAccount() {
     return this.http.get(`${this.baseApiUrl}users/2`)
+  }
+
+  deleteAccount({id}) {
+     this.http.delete(`${this.baseApiUrl}users/${id}`)
+        .subscribe(() => this.status = 'Delete successful');
   }
 }
