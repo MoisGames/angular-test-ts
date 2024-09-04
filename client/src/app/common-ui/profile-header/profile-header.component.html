@@ -1,8 +1,8 @@
-@if (profile) {
+@if (profile; as profile) {
     <main class="profile-header__container">
         <div class="profile-header__avatar_container">
-            <img [src]="profile.data.avatar" alt="avatar" class="profile-header__avatar">
-            <div class="profile-header__name">{{profile.first_name}} {{profile.last_name}}</div>
+            <img [src]="profile.avatar" alt="avatar" class="profile-header__avatar">
+            <div class="profile-header__name">{{profile.first_name}} 222222222 {{profile.last_name}}</div>
         </div>
         <div class="profile-header__email">Электронная почта: {{profile.email}}</div>
     </main>

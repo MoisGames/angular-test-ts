@@ -21,7 +21,7 @@ export class ProfileService {
       return this.http.get(`${this.baseApiUrl}users?page=2`)
   }
 
-  getAccount(id: number) {
-    return this.http.get(`${this.baseApiUrl}users/{${id}`)
+  getAccount() {
+    return this.http.get(`${this.baseApiUrl}users/2`)
   }
 }

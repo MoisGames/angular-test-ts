@@ -6,6 +6,7 @@
     height: auto;
     border: 1px solid white;
     padding: 100px;
+    color: white;
 }
 .profile-header__avatar_container {
     display: flex;

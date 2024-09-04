@@ -1,9 +1,10 @@
 import { Component, Input, } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-profile-header',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './profile-header.component.html',
   styleUrl: './profile-header.component.css'
 })
