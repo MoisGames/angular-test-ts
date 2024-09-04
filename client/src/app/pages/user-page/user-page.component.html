@@ -1,6 +1,18 @@
-<h1 class="user-page__header">Список пользователей</h1>
+<main class="user-page_container">
+    <h1 class="user-page__header">Список пользователей</h1>
 @for (profile of profiles.data; track profile.id  ) {
-    <app-profile-card [profile]="profile" ></app-profile-card>
+    <app-profile-card 
+        [profile]="profile" >
+    </app-profile-card>
 }
 <h1 class="user-page__header">Список ресурсов</h1>
-<app-list-resources></app-list-resources>
+<div class="user-page__header_list_resource_container">
+    @for (resource of resources.data; track resource.id) {
+        <app-list-resources
+            [resource]="resource"
+        ></app-list-resources>
+    }
+</div>
+</main>
+
+

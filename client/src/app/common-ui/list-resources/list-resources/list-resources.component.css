@@ -1,0 +1,10 @@
+.list-resources__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: auto;
+    border: 1px solid white;
+    padding: 100px;
+    color: white;
+}

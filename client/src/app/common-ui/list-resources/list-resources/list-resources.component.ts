@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-resources',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './list-resources.component.css'
 })
 export class ListResourcesComponent {
-
+  @Input() resource!: any
 }

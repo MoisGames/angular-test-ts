@@ -1,1 +1,18 @@
-<p>list-resources works!</p>
+@if (resource) {
+    <main class="list-resources__container">
+        <div class="list-resources__item">
+            Название цвета: {{resource.name}}
+        </div>
+        <div class="list-resources__item">
+            Год появления: {{resource.year}}
+        </div>
+        <div class="list-resources__item">
+            Номер цвета Pantone: {{resource.pantone_value}}
+        </div>
+        <div class="list-resources__item">
+            Код цвета в 16-чном формате: {{resource.color}}
+        </div>
+    </main>
+} @else {
+    null
+}
