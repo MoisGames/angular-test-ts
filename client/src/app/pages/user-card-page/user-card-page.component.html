@@ -1,4 +1,13 @@
-<h1 class="user-card-page__header">Страница пользователя</h1>
-@for (profile of profiles.data; track profile.id) {
-    <app-profile-header [profile] = "profile"></app-profile-header>
+@if (profile$ | async; as profile) {
+    <div class="user-card-page__container">
+        <h1 class="user-card-page__header">Страница пользователя</h1>
+            <app-profile-header
+                [profile]="profile"
+            ></app-profile-header>
+    </div>
+} @else {
+    NO WORK
+    <div>
+        
+    </div>
 }

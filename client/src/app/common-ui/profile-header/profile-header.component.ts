@@ -8,6 +8,6 @@ import { Component, Input, } from '@angular/core';
   styleUrl: './profile-header.component.css'
 })
 export class ProfileHeaderComponent {
-  @Input() profile?: any
+  @Input() profile!: any
   
 }
