@@ -1,0 +1,16 @@
+.messages__button {
+    display: flex;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 10px;
+}
+.messages__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white ;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50vw;
+    margin: 10px;
+}

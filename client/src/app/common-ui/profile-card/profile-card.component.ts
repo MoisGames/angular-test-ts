@@ -18,12 +18,12 @@ export class ProfileCardComponent {
     
     status!: any
     deleteClick(id: number) {
-      this.profileServices.deleteAccount(id).subscribe(status => {
-        this.status = status
-        console.log(status);
+      this.profileServices.deleteAccount(id).subscribe()
+      // status => {
+      //   this.status = status
+      //   console.log(status);
         
-      })
-      
+      // }
       
     }
 }

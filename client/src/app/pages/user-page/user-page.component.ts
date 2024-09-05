@@ -3,12 +3,13 @@ import { ProfileCardComponent } from "../../common-ui/profile-card/profile-card.
 import { ProfileService } from '../../data/services/profile.service';
 import { ListResourcesComponent } from '../../common-ui/list-resources/list-resources/list-resources.component';
 import { ResourcesService } from '../../data/services/resources.service';
+import { MessagesComponent } from "../../common-ui/messages/messages.component";
 
 
 @Component({
   selector: 'app-user-page',
   standalone: true,
-  imports: [ProfileCardComponent, ListResourcesComponent],
+  imports: [ProfileCardComponent, ListResourcesComponent, MessagesComponent],
   templateUrl: './user-page.component.html',
   styleUrl: './user-page.component.css'
 })

@@ -1,5 +1,6 @@
 <main class="user-page_container">
     <h1 class="user-page__header">Список пользователей</h1>
+    <app-messages></app-messages>
 @for (profile of profiles.data; track profile.id  ) {
     <app-profile-card 
         [profile]="profile" >

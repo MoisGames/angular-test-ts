@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { Inject, inject, Injectable, signal } from '@angular/core';
 import { catchError, Observable, tap } from 'rxjs';
+import { MessagesComponent } from '../../common-ui/messages/messages.component';
+import { MessagesService } from './messages.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,8 @@ export class ProfileService {
   baseApiUrl = 'https://reqres.in/api/'
   me!: any
   id!: number
-  status!: any
-  log!: any;
+
+  constructor(private messageService: MessagesService) { }
 
   getMe() {
     return this.http.get(`${this.baseApiUrl}users/me`)
@@ -31,8 +33,10 @@ export class ProfileService {
   
   deleteAccount(id: number){
      return this.http.delete(`${this.baseApiUrl}users/${id}`).pipe(
-        tap(() =>  this.status = `Удален пользователь: id=${id}`),
+        tap(() => this.messageService.add(`Удален пользователь: id=${id}`)),
+                  
         
      )
   }
+  
 }
