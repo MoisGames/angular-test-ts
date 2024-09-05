@@ -4,7 +4,17 @@
             <img [src]="profile.data.avatar" alt="avatar" class="profile-header__avatar">
             <div class="profile-header__name">{{profile.data.first_name}} {{profile.data.last_name}}</div>
         </div>
-        <div class="profile-header__email">Электронная почта: {{profile.data.email}}</div>
+        <div 
+            class="profile-header__email"
+            >
+            Электронная почта: {{profile.data.email}}
+            <button 
+            class="btn"
+            (click)="onGoHome()"
+            >
+            На главную
+        </button>
+        </div>
         
     </main>
 } @else {

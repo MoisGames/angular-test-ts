@@ -1,5 +1,6 @@
-import { Component, Input, } from '@angular/core';
+import { Component, inject, Input, } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-header',
@@ -9,6 +10,10 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './profile-header.component.css'
 })
 export class ProfileHeaderComponent {
+  router = inject(Router)
   @Input() profile!: any
-  
+
+  onGoHome() {
+    this.router.navigate([""])
+  }
 }

@@ -2,8 +2,8 @@ import { Component, effect, inject } from '@angular/core';
 import { ProfileHeaderComponent } from '../../common-ui/profile-header/profile-header.component';
 import { FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ProfileService } from '../../data/services/profile.service';
-import { OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,6 +16,7 @@ import { firstValueFrom } from 'rxjs';
 export class SettingsPageComponent {
     fb = inject(FormBuilder)
     profileService = inject(ProfileService)
+    router = inject(Router)
 
     form: FormGroup = this.fb.group({
       first_name: ['', Validators.required],
@@ -24,12 +25,10 @@ export class SettingsPageComponent {
       // avatar: ['', Validators.required],
     })
     constructor() {
-      effect(() => {
-        //@ts-ignore
-        this.form.patchValue(this.profileService.me())
-        
-        
-      })
+      // effect(() => {
+      //   //@ts-ignore
+      //   this.form.patchValue(this.profileService.me())
+      // })
     }
     onSave() {
       this.form.markAllAsTouched()
@@ -40,5 +39,8 @@ export class SettingsPageComponent {
       
       //@ts-ignore
       firstValueFrom(this.profileService.updateUser(this.form.value))
+    }
+    onRedirectHome() {
+      this.router.navigate([""])
     }
 }

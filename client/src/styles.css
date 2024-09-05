@@ -37,4 +37,6 @@ body {
     width: 100%;
     border-radius: 10px;
     background-color: var(--primary-color);
+    margin: 20px 0px 20px;
+    color: var(--light-transparent-color);
 }
