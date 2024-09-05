@@ -4,14 +4,24 @@
     padding: 24px;
 }
 .profile-form {
-    padding: 32px;
-    border: 1 solid var(--light-color);
-    background-color: var(--dark-color);
-    display: flex;
-    gap: 20px;
-}
-.two-columns {
     display: flex;
     flex-direction: column;
+}
+.profile-form__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--light-color);
+    background-color: var(--dark-color);
+    display: flex;
+    height: 100%;
+    gap: 20px;
+    padding: 32px;
+    height: 70vh;
+}
+
+.two-columns {
+    display: flex;
+    flex-direction: row;
     gap: 20px;
 }

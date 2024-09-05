@@ -1,26 +1,46 @@
 <app-profile-header>
 
 </app-profile-header>
-<form class="profile-form" [formGroup]="form">
-    <div class="two-columns">
+<form class="profile-form__wrapper" [formGroup]="form">
+    <div class="profile-form">
+        <div class="two-columns">
+            <label class="tt-form-label">
+                <span class="tt-form-label__text">Имя </span>
+                <input 
+                class="tt-form-input"
+                type="text"
+                placeholder="Введите имя..."
+                formControlName="first_name"
+                >
+            </label>
+            <label class="tt-form-label">
+                <span class="tt-form-label__text">Фамилия </span>
+                <input 
+                class="tt-form-input"
+                type="text"
+                placeholder="Введите фамилию..."
+                formControlName="last_name"
+                >
+            </label>
+        </div>
         <label class="tt-form-label">
-            <span class="tt-form-label__text">Имя </span>
+            <span class="tt-form-label__text">Электронная почта </span>
             <input 
             class="tt-form-input"
             type="text"
-            placeholder="Введите имя..."
-            formControlName="first_name"
+            placeholder="Введите email..."
+            formControlName="email"
             >
         </label>
-        <label class="tt-form-label">
-            <span class="tt-form-label__text">Имя </span>
-            <input 
-            class="tt-form-input"
-            type="text"
-            placeholder="Введите фамилию..."
-            formControlName="last_name"
-            >
-        </label>
-        
+    </div>
+    <div>
+        <div>
+            <button 
+                class="btn"
+                (click)="onSave()"
+                >
+                Сохранить
+            </button>
+        </div>
     </div>
 </form>
