@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { tap } from 'rxjs';
+import { catchError, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,8 @@ export class ProfileService {
   baseApiUrl = 'https://reqres.in/api/'
   me!: any
   id!: number
-  status!: string
-
+  status!: any
+  log!: any;
 
   getMe() {
     return this.http.get(`${this.baseApiUrl}users/me`)
@@ -28,9 +28,11 @@ export class ProfileService {
   getAccount() {
     return this.http.get(`${this.baseApiUrl}users/2`)
   }
-
-  deleteAccount({id}) {
-     this.http.delete(`${this.baseApiUrl}users/${id}`)
-        .subscribe(() => this.status = 'Delete successful');
+  
+  deleteAccount(id: number){
+     return this.http.delete(`${this.baseApiUrl}users/${id}`).pipe(
+        tap(() =>  this.status = `Удален пользователь: id=${id}`),
+        
+     )
   }
 }
