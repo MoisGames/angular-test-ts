@@ -3,9 +3,7 @@
         <span>Сообщение: </span>
         <button (click)="messageService.clear()" class="messages__button">Очистить</button>
         @for (message of messageService.messages; track message; let idx = $index) {
-            
             <div class="messages__item">
-                
                 {{message}}
             </div>
         }
