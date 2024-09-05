@@ -1,14 +1,12 @@
 import { Component, inject, Input, } from '@angular/core';
 import { ProfileService } from '../../data/services/profile.service';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { MessagesComponent } from "../messages/messages.component";
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-profile-card',
   standalone: true,
-  imports: [MessagesComponent],
+  imports: [MessagesComponent, RouterModule],
   templateUrl: './profile-card.component.html',
   styleUrl: './profile-card.component.css'
 })

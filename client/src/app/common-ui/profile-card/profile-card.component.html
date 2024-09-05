@@ -16,6 +16,10 @@
                 <span 
                 class="profile-card__last_name"
                 >{{profile.last_name}}</span>
+                <a 
+                    class="profile-card__link_user"
+                    [routerLink]="['/users', profile.id]"
+                    >О Пользователе</a>
             </div>
         </div>
         <div 

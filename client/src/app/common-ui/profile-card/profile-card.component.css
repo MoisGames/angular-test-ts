@@ -3,6 +3,9 @@
     --light-color: rgb(255,255,255);
     --purple-color: rgb(128, 0, 255);
 }
+a:link, a:visited {
+    color: var(--light-color);
+}
 .profile-card {
     border: 1px solid var(--light-color);
     color: var(var(--light-color));
@@ -34,6 +37,15 @@
     gap: 20px;
     width: 200px;
     height: 200px;
+}
+.profile-card__link_user {
+    font-family:  "Montserrat-Black", 'Courier New', Courier, monospace;
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .profile-card__first_name, .profile-card__email {

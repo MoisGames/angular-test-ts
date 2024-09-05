@@ -33,9 +33,7 @@ export class ProfileService {
   
   deleteAccount(id: number){
      return this.http.delete(`${this.baseApiUrl}users/${id}`).pipe(
-        tap(() => this.messageService.add(`Удален пользователь: id=${id}`)),
-                  
-        
+        tap((status: any) => this.messageService.add(`Удален пользователь: id=${id} Статус: ${status}`)),
      )
   }
   
