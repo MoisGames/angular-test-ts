@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    gap: 48px;
+    padding: 24px;
+}
+.profile-form {
+    padding: 32px;
+    border: 1 solid var(--light-color);
+    background-color: var(--dark-color);
+    display: flex;
+    gap: 20px;
+}
+.two-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
