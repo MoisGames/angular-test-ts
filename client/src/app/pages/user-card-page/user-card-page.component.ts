@@ -17,13 +17,15 @@ import { Profile } from '../../data/interfaces/profile.interface';
 })
 export class UserCardPageComponent {
   profileService = inject(ProfileService)
-
   profiles: any = [] // Мы получаем объект с полем data
- 
+  route: ActivatedRoute = inject(ActivatedRoute)
+  id: number = 0
+
   constructor () {
-    this.profileService.getAccount()
+    this.id = Number(this.route.snapshot.params["id"])
+    this.profileService.getAccount(this.id)
       .subscribe(val => {
-        // console.log(val);
+        console.log(val);
         
         return this.profiles = val // получили ответ от сервера и записали в profiles
       })

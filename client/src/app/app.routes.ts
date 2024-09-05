@@ -4,8 +4,8 @@ import { UserCardPageComponent } from './pages/user-card-page/user-card-page.com
 
 
 export const routes: Routes = [
-    {path: 'userList', component: UserPageComponent, title: "Список пользователей"},
+    {path: 'users', component: UserPageComponent, title: "Список пользователей"},
     {path: '', redirectTo: 'usersList', pathMatch: 'full' },
-    {path: 'users', component: UserCardPageComponent, title: "Страница пользователя"},
-    { path: "**", redirectTo: "userList"},
+    {path: 'users/:id', component: UserCardPageComponent, title: "Страница пользователя"},
+    { path: "**", redirectTo: "users"},
 ];
