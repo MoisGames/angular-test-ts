@@ -1,6 +1,8 @@
 import { Component, inject, Input, } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { ProfileService } from '../../data/services/profile.service';
+import { Profile } from '../../data/interfaces/profile.interface';
 
 @Component({
   selector: 'app-profile-header',
@@ -11,9 +13,15 @@ import { Router } from '@angular/router';
 })
 export class ProfileHeaderComponent {
   router = inject(Router)
-  @Input() profile!: any
+  profileService = inject(ProfileService)
 
+  @Input() profile!: any // Получили текущий профайл
+  currentProfileHeader = this.profile.data // Объект Json с текущим юзером
+
+  sendCurrentProfile(currentProfileHeader:Profile[]) {
+    this.profileService.getCurrentProfile(currentProfileHeader)
+  }
   onGoHome() {
-    this.router.navigate([""])
+    this.router.navigate([""]) // Возврат домой
   }
 }

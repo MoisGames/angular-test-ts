@@ -14,7 +14,7 @@ export class ProfileService {
   baseApiUrl = 'https://reqres.in/api/'
   me!: any
   id: number = 0
-  
+  currentProfile: Profile[] = [] // В сервисе хранится текущий юзер Json
 
   constructor(private messageService: MessagesService) { }
 
@@ -43,5 +43,9 @@ export class ProfileService {
       `${this.baseApiUrl}users/${this.id}`,
       profile
     )
+  }
+  getCurrentProfile(val: Profile[]) { // Получаем текущего юзера
+      this.currentProfile = val
+      console.log(val);
   }
 }

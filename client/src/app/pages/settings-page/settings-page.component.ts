@@ -35,8 +35,7 @@ export class SettingsPageComponent {
       this.form.updateValueAndValidity()
 
       if (this.form.invalid) return console.log("Error");
-      
-      
+
       //@ts-ignore
       firstValueFrom(this.profileService.updateUser(this.form.value))
     }
