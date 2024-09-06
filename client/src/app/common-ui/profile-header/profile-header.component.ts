@@ -16,11 +16,11 @@ export class ProfileHeaderComponent {
   profileService = inject(ProfileService)
 
   @Input() profile!: any // Получили текущий профайл
-  currentProfileHeader = this.profile.data // Объект Json с текущим юзером
+  // currentProfileHeader = this.profile.data // Объект Json с текущим юзером
 
-  sendCurrentProfile(currentProfileHeader:Profile[]) {
-    this.profileService.getCurrentProfile(currentProfileHeader)
-  }
+  // sendCurrentProfile() { // Отправляем данные юзера в profile.service
+  //   this.profileService.getCurrentProfile()
+  // }
   onGoHome() {
     this.router.navigate([""]) // Возврат домой
   }
