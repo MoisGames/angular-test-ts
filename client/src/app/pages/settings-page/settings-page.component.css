@@ -3,6 +3,14 @@
     gap: 48px;
     padding: 24px;
 }
+.settings-page__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.current-user__wrapper {
+    display: flex;
+    
+}
 .profile-form {
     display: flex;
     flex-direction: column;

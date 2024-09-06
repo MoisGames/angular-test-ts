@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule } 
 import { ProfileService } from '../../data/services/profile.service';
 import { firstValueFrom } from 'rxjs';
 import { Router } from '@angular/router';
+import { Profile } from '../../data/interfaces/profile.interface';
 
 
 @Component({
@@ -14,9 +15,19 @@ import { Router } from '@angular/router';
   styleUrl: './settings-page.component.css'
 })
 export class SettingsPageComponent {
+  constructor() {
+    effect(() => {
+      //@ts-ignore
+      this.form.patchValue(
+        this.profileService.currentProfile); // Заполняем форму текущим юзером
+      this.profile = this.profileService.currentProfile
+    })
+  }
     fb = inject(FormBuilder)
     profileService = inject(ProfileService)
     router = inject(Router)
+    profile: Profile[] = []
+
 
     form: FormGroup = this.fb.group({
       first_name: ['', Validators.required],
@@ -24,12 +35,7 @@ export class SettingsPageComponent {
       email: ['', Validators.required],
       // avatar: ['', Validators.required],
     })
-    constructor() {
-      effect(() => {
-        //@ts-ignore
-        this.form.patchValue(this.profileService.currentProfile) // Заполняем форму текущим юзером
-      })
-    }
+   
     onSave() {
       this.form.markAllAsTouched()
       this.form.updateValueAndValidity()
@@ -41,5 +47,10 @@ export class SettingsPageComponent {
     }
     onRedirectHome() {
       this.router.navigate([""])
+    }
+    log() {
+      console.log(this.profile, 'Это профайл который мы получаем в компонент карты');
+      console.log(this.profile = this.profileService.currentProfile, "Это то что мы присваиваем");
+      
     }
 }

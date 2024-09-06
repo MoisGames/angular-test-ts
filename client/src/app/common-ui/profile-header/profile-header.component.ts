@@ -18,19 +18,18 @@ export class ProfileHeaderComponent {
   currentProfile: Profile[] = []
 
   constructor() {
-    effect(() => {
-      this.currentProfile = 
-        this.profile.data //Один раз при загрузке страницы присваиваем текущий profile
-    })
+    // effect(() => {
+    //   this.currentProfile = 
+    //     this.profile //Один раз при загрузке страницы присваиваем текущий profile
+    // })
       
   }
-
   log() {
-    console.log(this.profile.data, 'Это текущий профайл из страницы юзера');
+    console.log(this.profile, 'Это текущий профайл из страницы юзера');
     
   }
   sendCurrentProfile() { // Отправляем данные юзера в profile.service
-    this.profileService.getCurrentProfile(this.currentProfile)
+    this.profileService.getCurrentProfile(this.profile)
   }
   onGoHome() {
     this.router.navigate([""]) // Возврат домой

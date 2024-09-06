@@ -1,13 +1,13 @@
 @if (profile) {
     <main class="profile-header__container">
         <div class="profile-header__avatar_container">
-            <img [src]="profile.data.avatar" alt="avatar" class="profile-header__avatar">
-            <div class="profile-header__name">{{profile.data.first_name}} {{profile.data.last_name}}</div>
+            <img [src]="profile.avatar" alt="avatar" class="profile-header__avatar">
+            <div class="profile-header__name">{{profile.first_name}} {{profile.last_name}}</div>
         </div>
         <div 
             class="profile-header__email"
             >
-            Электронная почта: {{profile.data.email}}
+            Электронная почта: {{profile.email}}
             <button 
             class="btn"
             (click)="sendCurrentProfile();onGoSettings()"

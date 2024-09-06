@@ -46,6 +46,6 @@ export class ProfileService {
   }
   getCurrentProfile(val: Profile[]) { // Получаем текущего юзера
       this.currentProfile = val
-      console.log(val);
+      console.log(this.currentProfile, 'Это Currentprofile Profile.service');
   }
 }

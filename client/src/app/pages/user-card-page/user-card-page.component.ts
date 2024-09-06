@@ -25,8 +25,6 @@ export class UserCardPageComponent {
     this.id = Number(this.route.snapshot.params["id"])
     this.profileService.getAccount(this.id)
       .subscribe(val => {
-        console.log(val);
-        
         return this.profiles = val // получили ответ от сервера и записали в profiles
       })
       
