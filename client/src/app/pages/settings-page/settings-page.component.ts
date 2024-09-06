@@ -25,10 +25,10 @@ export class SettingsPageComponent {
       // avatar: ['', Validators.required],
     })
     constructor() {
-      // effect(() => {
-      //   //@ts-ignore
-      //   this.form.patchValue(this.profileService.me())
-      // })
+      effect(() => {
+        //@ts-ignore
+        this.form.patchValue(this.profileService.currentProfile) // Заполняем форму текущим юзером
+      })
     }
     onSave() {
       this.form.markAllAsTouched()
