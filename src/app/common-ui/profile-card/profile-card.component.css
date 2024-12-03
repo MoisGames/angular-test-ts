@@ -1,0 +1,75 @@
+:root {
+    --dark-color: rgb(0,0,0);
+    --light-color: rgb(255,255,255);
+    --purple-color: rgb(128, 0, 255);
+}
+a:link, a:visited {
+    color: var(--light-color);
+}
+.profile-card {
+    border: 1px solid var(--light-color);
+    color: var(var(--light-color));
+    padding: 32px 24px;
+    margin: 10px;
+    display: flex;
+    flex: 5 5 0%;
+    gap: 20px;
+}
+
+.avatar-name {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.profile-card__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    gap: 20px;
+}
+.profile-card__name {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
+    height: 200px;
+}
+.profile-card__link_user {
+    font-family:  "Montserrat-Black", 'Courier New', Courier, monospace;
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.profile-card__first_name, .profile-card__email {
+    font-family:  "Montserrat-Black", 'Courier New', Courier, monospace;
+}
+.profile-card__email {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 0px 24px;
+    gap: 20px;
+    width: 400px;
+}
+.profile-card__last_name {
+    font-family:  "Montserrat-Light", 'Courier New', Courier, monospace;
+}
+.profile-card__button_delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgb(128, 0, 255);
+    gap: 20px;
+    font-family:  "Montserrat-Black", 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,56 @@
+<main class="settings-page__wrapper">
+    <div class="current-user__wrapper">
+        <app-profile-header
+        [profile]="profile"
+        >
+    </app-profile-header>
+    </div>
+
+    <form class="profile-form__wrapper" [formGroup]="form">
+        <div class="profile-form">
+            <h1>Изменить данные пользователя</h1>
+            <div class="two-columns">
+                <div class="setting-container__item">
+                    <span class="setting-container__text">Имя: </span>
+                    <input
+                    type="text"
+                    placeholder="Введите имя..."
+                    formControlName="first_name"
+                    >
+                </div>
+                <div class="setting-container__item">
+                    <span class="setting-container__text">Фамилия: </span>
+                    <input
+                    type="text"
+                    placeholder="Введите фамилию..."
+                    formControlName="last_name"
+                    >
+                </div>
+                <div class="setting-container__item">
+                  <span class="setting-container__text">Электронная почта: </span>
+                  <input
+                  type="text"
+                  placeholder="Введите email..."
+                  formControlName="email"
+                  >
+              </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <button
+                    class="profile-form__button"
+                    (click)="onRedirectHome()"
+                    >
+                    Отмена
+                </button>
+                <button
+                    class="profile-form__button"
+                    (click)="onSave()"
+                    >
+                    Сохранить
+                </button>
+            </div>
+        </div>
+    </form>
+</main>
