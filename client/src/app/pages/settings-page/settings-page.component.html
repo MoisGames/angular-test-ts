@@ -1,0 +1,58 @@
+<main class="settings-page__wrapper">
+    <div class="current-user__wrapper">
+        <app-profile-header
+        [profile]="profile"
+        >
+    </app-profile-header>
+    </div>
+    
+    <form class="profile-form__wrapper" [formGroup]="form">
+        <div class="profile-form">
+            <div class="two-columns">
+                <label class="tt-form-label">
+                    <span class="tt-form-label__text">Имя </span>
+                    <input 
+                    class="tt-form-input"
+                    type="text"
+                    placeholder="Введите имя..."
+                    formControlName="first_name"
+                    >
+                </label>
+                <label class="tt-form-label">
+                    <span class="tt-form-label__text">Фамилия </span>
+                    <input 
+                    class="tt-form-input"
+                    type="text"
+                    placeholder="Введите фамилию..."
+                    formControlName="last_name"
+                    >
+                </label>
+            </div>
+            <label class="tt-form-label">
+                <span class="tt-form-label__text">Электронная почта </span>
+                <input 
+                class="tt-form-input"
+                type="text"
+                placeholder="Введите email..."
+                formControlName="email"
+                >
+            </label>
+        </div>
+        <div>
+            <div>
+                <button 
+                    class="btn"
+                    (click)="onRedirectHome()"
+                    >
+                    Отмена
+                </button>
+                <button 
+                    class="btn"
+                    (click)="onSave();log()"
+                    >
+                    Сохранить
+                </button>
+            </div>
+        </div>
+    </form>
+</main>

@@ -1,0 +1,42 @@
+@import "./fonts.css";
+
+:root {
+    --dark-color: rgb(0,0,0);
+    --light-color: rgb(255,255,255);
+    --primary-color: rgb(115, 0, 255);
+    --light-transparent-color: rgb(255,255,255, 0.75);
+}
+body {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+.tt-form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.tt-form-label__text {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--light-transparent-color);
+}
+.tt-form-input {
+    display: flex;
+    font-size: 26px;
+    border-bottom: 1px solid var(--light-color);
+    color: var(--light-color);
+    background: none;
+    border-radius: 4px;
+
+    &:focus-visible {
+        outline: 1px solid var(--primary-color);
+    }
+}
+.btn {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    margin: 20px 0px 20px;
+    color: var(--light-transparent-color);
+}
