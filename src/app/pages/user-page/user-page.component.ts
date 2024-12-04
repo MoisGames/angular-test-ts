@@ -3,6 +3,7 @@ import { ProfileCardComponent } from "../../common-ui/profile-card/profile-card.
 import { ProfileService } from '../../data/services/profile.service';
 import { ListResourcesComponent } from '../../common-ui/list-resources/list-resources/list-resources.component';
 import { ResourcesService } from '../../data/services/resources.service';
+import { AuthService } from '../../data/services/auth.service';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class UserPageComponent {
   resourceService = inject(ResourcesService)
   resources: any = []
 
+  authService = inject(AuthService)
 
   constructor () {
     this.profileService.getTestAccounts()

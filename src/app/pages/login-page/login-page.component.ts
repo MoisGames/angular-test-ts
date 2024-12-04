@@ -1,20 +1,22 @@
 // login.component.ts
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthService } from '../../data/services/auth.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-auth-register-page',
+  selector: 'app-login-page',
   standalone: true,
   imports: [ReactiveFormsModule,],
-  templateUrl: './auth-register-page.component.html',
-  styleUrl: 'auth-register-page.component.css'
+  templateUrl: './login-page.component.html',
+  styleUrl: 'login-page.component.css'
 })
 
-export class AuthRegisterPage {
+export class LoginPage {
   loginForm: FormGroup;
+  router = inject(Router)
 
   constructor(private authService: AuthService, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -28,10 +30,11 @@ export class AuthRegisterPage {
   }
 
   onSubmit() {
-    // Убедитесь, что форма валидна
+
     if (this.loginForm.valid) {
-      // Используем firstValueFrom, если хотите использовать промис
-      firstValueFrom(this.authService.login(this.loginForm.value.email, this.loginForm.value.password)).then(
+
+      firstValueFrom(this.authService.login(this.loginForm.value.email,
+        this.loginForm.value.password)).then(
         success => {
           console.log('Успех:', success);
         }
@@ -39,5 +42,9 @@ export class AuthRegisterPage {
         console.error('Ошибка:', error);
       });
     }
+  }
+
+  navigateToRegister() {
+    this.router.navigate(['register']);
   }
 }

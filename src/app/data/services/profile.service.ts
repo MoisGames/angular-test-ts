@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, inject, Injectable, signal } from '@angular/core';
-import { catchError, Observable, tap } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import {inject, Injectable } from '@angular/core';
+import {tap } from 'rxjs';
 import { Profile } from '../interfaces/profile.interface';
 
 @Injectable({
@@ -37,17 +36,6 @@ export class ProfileService {
     return this.http.put(
       `${this.baseApiUrl}users/${this.id}`, profile)
   }
-
-  // updateProfile(profile: Profile) {
-  //   this.updateUser(profile).subscribe({
-  //     next: (response) => {
-  //         console.log('Записываемые данные профиля: ',response);
-  //     },
-  //     error: (err) => {
-  //         console.error('Ошибка:', err);
-  //     }
-  // });
-  // }
 
   getCurrentProfile(val: Profile[]) { // Получаем текущего юзера
       this.currentProfile = val

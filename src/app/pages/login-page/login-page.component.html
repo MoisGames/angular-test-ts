@@ -1,0 +1,35 @@
+<main
+  class="login-page__wrapper">
+  <article
+    class="login-page__container">
+    <h1>Страница Авторизации</h1>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()">
+      <div
+        class="input__container">
+        <label>Электронная почта:</label>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Введите почту...">
+      </div>
+      <div
+        class="input__container">
+        <label>Пароль:</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Введите пароль...">
+      </div>
+      <div
+        class="button__container">
+        <button
+          type="submit">Войти</button>
+        <button
+          type="button"
+          (click)="navigateToRegister()">Зарегистрироваться</button>
+      </div>
+    </form>
+  </article>
+</main>
