@@ -1,5 +1,4 @@
 import { Component, inject, Input } from '@angular/core';
-import { ProfileService } from '../../../data/services/profile.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -12,5 +11,5 @@ import { HttpClient } from '@angular/common/http';
 export class ListResourcesComponent {
   profilesService = inject(HttpClient)
   @Input() resource!: any
-  
+
 }

@@ -1,59 +1,63 @@
 # AngularTsUserPage
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+Версия Angular 19.0.2.
+Версия Node 18.20.5
+
+Небольшое приложение на Angular, демонстрирующее работу с внешним API:
+```
+https://reqres.in/
+```
+Начальная страница Авторизации или Регистрации:
+Необходимо ввести любую почту указанную у пользователей данного ресурса например: 
+```
+lindsay.ferguson@reqres.in
+```
+Пароль может быть любым. При правильной почте мы получаем токен сохраняем его в local storage, после чего авторизируемся.
+
+И мы попадаем на `/users`: 
+Это список пользователей.
+
+Кнопка `Выйти`: 
+Кнопка для удаления токена и повторной авторизации и аутентификации.
+
+Кнопка `О пользователе`: 
+Ведет на страницу пользователя. О ней чуть ниже.
+
+Кнопка `Удалить пользователя`: 
+Удаляет пользователя из массива (При перезагрузке восстанавливается, т.к это просто проверка работы end point)
+
+### Страница `О пользователе`
+
+Здесь только две кнопки
+`На Главную`: 
+Переходим к списку пользователей
+
+`Изменить данные`: 
+Переходим на страницу изменения пользователя. В inputs у нас заполняется текущий пользователь,
+если хотим сохранить нажимаем, и в консоли выводится сообщение с измененными данными от сервера.
+Кнопка `Отмена` Перенаправляет вас также на страницу со списком пользователей.
 
 ## Development server
 
-To start a local development server, run:
+Для запуска сервера:
 
-```bash
+```cmd
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
+После запуска сервера откройте браузер и перейдите по адресу `http://localhost:4200/`. Приложение будет автоматически перезагружаться всякий раз, когда вы изменяете любой из исходных файлов.
 
 ## Building
 
-To build the project run:
+Для сборки проекта выполните:
 
-```bash
+```cmd
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Remote / Install
+Чтобы создать клон репозитория в командной строке:
 
-## Running unit tests
+git clone https://github.com/MoisGames/angular-test-ts
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Чтобы запустить приложение: В терминале введите ng serve Нажмите Enter
