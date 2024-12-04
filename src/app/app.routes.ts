@@ -9,5 +9,5 @@ export const routes: Routes = [
     {path: '', redirectTo: 'usersList', pathMatch: 'full' },
     {path: 'users/:id', component: UserCardPageComponent, title: "Страница пользователя"},
     {path: 'settings', component: SettingsPageComponent, title: "Страница изменения данных о пользователе"},
-    { path: "**", redirectTo: "users"},
+    {path: "**", redirectTo: "users"},
 ];
