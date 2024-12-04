@@ -1,25 +1,39 @@
+// auth.service.ts
 import { Injectable } from '@angular/core';
-    import { Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http'; // Для HTTP-запросов
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
-    @Injectable({
-      providedIn: 'root'
-    })
-    export class AuthService {
-      private loggedIn = false;
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+  private baseUrl = 'https://reqres.in';
+  private loggedIn = false;
 
-      constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
-      login() {
-        this.loggedIn = true;
-        this.router.navigate(['/users']);
-      }
+  login(username: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/api/login`, { username, password })
+      .pipe(
+        tap(response => {
+          if (response.token) {
+            console.log(response);
 
-      logout() {
-        this.loggedIn = false;
-        this.router.navigate(['/login']);
-      }
+            localStorage.setItem('token', response.token); // Сохраняем токен в локальном хранилище
+            this.loggedIn = true;
+            this.router.navigate(['users']);
+          }
+        })
+      );
+  }
 
-      isAuthenticated(): boolean {
-        return this.loggedIn;
-      }
-    }
+  logout() {
+    localStorage.removeItem('token'); // Удаляем токен
+    this.loggedIn = false;
+    this.router.navigate(['/login']);
+  }
+
+  isAuthenticated(): boolean {
+    return this.loggedIn && !!localStorage.getItem('token'); // Проверяем наличие токена
+  }
+}
